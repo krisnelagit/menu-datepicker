@@ -11,9 +11,16 @@
   <link href="//cdn.gitcdn.link/cdn/angular/bower-material/v1.1.3/angular-material.css" rel="stylesheet">
   <link href="//rawgit.com/indrimuska/angular-moment-picker/master/dist/angular-moment-picker.css" rel="stylesheet">
   <link href="style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+  
+  <script>
+  $(document).ready(function() {
+    $("#datepicker").datepicker();
+  });
+  </script>
 </head>
-
-<body ng-cloak style="padding:20px;" ng-controller="DemoController as ctrl">
 
   <md-menu>
     <!-- Trigger element is a md-button with an icon -->
@@ -21,7 +28,12 @@
       click
     </md-button>
     <md-menu-content>
-      <span moment-picker="ctrl.time" format="DD/MM/YYYY" inline="true" min-view="month" max-view="month">
+      <span moment-picker="ctrl.time" format="DD/MM/YYYY" inline="true">
+        <body>
+<form>
+    <input id="datepicker" />
+</form>
+</body>
       </span>
     </md-menu-content>
   </md-menu>
